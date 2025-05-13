@@ -8,4 +8,4 @@
 	- Sign-In Page
 	- Catalog Page
 	- Checkout Page
-	- Order History Page
+	- Order History Pag
