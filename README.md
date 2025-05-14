@@ -53,6 +53,18 @@
 ---
 ## Usage:
 1. Clone into the project repository `humean-books` using the terminal command `git clone git@github.com:RamanujaMohanty/humean-books.git`
-2. Do the following steps:
-	a. Use `cd humean-books` to enter the repository
-	b. 
+2. Use `cd humean-books` to enter the repository
+3. Use the command `npm install express sqlite3 dotenv` to install the following:
+	a. Express.js
+	b. SQLite
+	c. DotEnv
+4. Use the command:
+
+
+```bash
+node app.js
+```
+
+
+
+
