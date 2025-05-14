@@ -50,3 +50,9 @@
 	- Catalog Page
 	- Checkout Page
 	- Order History Page
+---
+## Usage:
+1. Clone into the project repository `humean-books` using the terminal command `git clone git@github.com:RamanujaMohanty/humean-books.git`
+2. Do the following steps:
+	a. Use `cd humean-books` to enter the repository
+	b. 
