@@ -57,11 +57,12 @@
 ```bash
 $ cd humean-books/
 ```
-- Use the command `npm install express sqlite3 dotenv ejs` to install the following:
+- Use the command `npm install express sqlite3 dotenv ejs bcrypt` to install the following:
 	-  Express.js
 	-  SQLite
 	-  DotEnv
  	-  EmbeddedJS (EJS)
+  	-  Bcrypt
 ```bash
 $ npm install express sqlite3 dotenv
 ```
