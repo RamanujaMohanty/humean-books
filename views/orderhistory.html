@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History - Humean Books</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main class="container">
+        <section>
+            <h2>Your Order History</h2>
+            <% if (orders && orders.length > 0) { %>
+                <% orders.forEach(function(order) { %>
+                    <div style="border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 8px;">
+                        <h3>Order #<%= order.id %> (Placed on: <%= new Date(order.order_date).toLocaleDateString() %>)</h3>
+                        <p>Total Amount: $<%= order.total_amount.toFixed(2) %></p>
+                        <h4>Items:</h4>
+                        <ul>
+                            <% if (order.items && order.items.length > 0) { %>
+                                <% order.items.forEach(function(item) { %>
+                                    <li><%= item.title %> x <%= item.quantity %> @ $<%= item.price_at_purchase.toFixed(2) %> each</li>
+                                <% }); %>
+                            <% } else { %>
+                                <li>No items found for this order.</li>
+                            <% } %>
+                        </ul>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>You have no past orders.</p>
+            <% } %>
+        </section>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+</html>

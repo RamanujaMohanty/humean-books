@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Humean Books</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main class="container">
+        <section>
+            <h2>Checkout</h2>
+            <h3>Your Cart Items:</h3>
+            <% if (cartItems && cartItems.length > 0) { %>
+                <ul>
+                    <% cartItems.forEach(function(item) { %>
+                        <li><%= item.title %> x <%= item.quantity %> - $<%= (item.price * item.quantity).toFixed(2) %></li>
+                    <% }); %>
+                </ul>
+                <h3>Total: $<%= totalAmount.toFixed(2) %></h3>
+
+                <form action="/orders/checkout" method="POST">
+                    <div>
+                        <label for="address">Shipping Address:</label>
+                        <textarea id="address" name="address" rows="4" required></textarea>
+                    </div>
+                    <div>
+                        <label for="paymentMethod">Payment Method:</label>
+                        <select id="paymentMethod" name="paymentMethod" required>
+                            <option value="">Select Method</option>
+                            <option value="credit_card">Credit Card</option>
+                            <option value="paypal">PayPal</option>
+                        </select>
+                    </div>
+                    <button type="submit">Place Order</button>
+                </form>
+            <% } else { %>
+                <p>Your cart is empty. Please add books from the <a href="/books/catalog">catalog</a>.</p>
+            <% } %>
+        </section>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+</html>

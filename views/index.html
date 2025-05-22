@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humean Books - First Edition Antique Books</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main class="container">
+        <section class="banner-ad recent-additions">
+            <h2>Discover Rare Finds!</h2>
+            <p>New first editions added weekly. Explore our curated collection.</p>
+        </section>
+
+        <section>
+            <h2>Featured Antique Books</h2>
+            <div class="book-grid">
+                <% if (recentBooks && recentBooks.length > 0) { %>
+                    <% recentBooks.forEach(function(book) { %>
+                        <div class="book-item">
+                            <img src="<%= book.image_url || '/images/default-book.png' %>" alt="<%= book.title %>">
+                            <h3><%= book.title %></h3>
+                            <p>Author: <%= book.author %></p>
+                            <p>Year: <%= book.year_of_release %></p>
+                            <p class="price">$<%= book.price.toFixed(2) %></p>
+                            <a href="/books/<%= book.id %>" class="button">View Details</a>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <p>No recent additions to display at the moment. Check back soon!</p>
+                <% } %>
+            </div>
+        </section>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+</html>
