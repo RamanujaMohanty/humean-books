@@ -8,28 +8,28 @@
 ## Technical Aspects:
 - Project File Structure:
 ```
-/your-bookstore-project
+/humean-books
 ├── node_modules/        # Installed npm packages (automatically created)
 ├── public/              # Static files (CSS, JS, images)
 │   ├── css/
 │   │   └── style.css
 │   ├── js/
 │   └── images/
-├── views/               # Your HTML template files (if using a templating engine, otherwise HTML files go here or in public)
-│   ├── layouts/         # Optional: for layout templates
-│   └── index.html       # Example: your homepage HTML
-│   └── catalog.html     # Example: your catalog page HTML
-│   └── signin.html      # Example: your sign-in page HTML
-│   └── checkout.html    # Example: your checkout page HTML
-│   └── orderhistory.html# Example: your order history page HTML
-├── src/                 # Or 'server/', 'backend/' - Your server-side code
-│   ├── config/          # Configuration files (e.g., database config)
+├── views/               
+│   ├── layouts/         
+│   └── index.html       
+│   └── catalog.html     
+│   └── signin.html      
+│   └── checkout.html    
+│   └── orderhistory.html
+├── src/                 
+│   ├── config/          
 │   │   └── database.js
-│   ├── controllers/     # Handle request/response logic
+│   ├── logics/     
 │   │   └── bookController.js
 │   │   └── authController.js
 │   │   └── orderController.js
-│   ├── models/          # Interact with the database (data structure and logic)
+│   ├── models/          
 │   │   └── book.js
 │   │   └── user.js
 │   │   └── order.js
@@ -57,10 +57,11 @@
 ```bash
 $ cd humean-books/
 ```
-- Use the command `npm install express sqlite3 dotenv` to install the following:
+- Use the command `npm install express sqlite3 dotenv ejs` to install the following:
 	-  Express.js
 	-  SQLite
 	-  DotEnv
+ 	-  EmbeddedJS (EJS)
 ```bash
 $ npm install express sqlite3 dotenv
 ```
